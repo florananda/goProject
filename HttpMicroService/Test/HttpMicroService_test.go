@@ -75,10 +75,10 @@ func handler(res http.ResponseWriter, r *http.Request) {
 func calldb(h *HttpData) (error){
 	mongoDialInfo:= & mgo.DialInfo {
 		Addrs: [] string {
-		 "ds259620.mlab.com:59620"},
-		Database: "samples",
-		Username: "fnanda", 
-		Password: "welcome1",
+		 "dbServerAddress"},
+		Database: "dbname",
+		Username: "dbusername", 
+		Password: "dbpassword",
 		Timeout: 60 * time.Second,
 	   }
 	session, err:= mgo.DialWithInfo(mongoDialInfo)
