@@ -20,3 +20,19 @@
  ```
  https://mlab.com/login
  ```
+ 
+ ### Rest_Apis_FileOperation/FileServer.go
+  This is an implementation of REST APIs for file operations.
+  APIs are:
+  #### POST /register
+   This is POST operation that registers the user
+  #### POST /login
+   This is a POST login operation used to login the users and sends a token back. This token would be used in other opearations to          identify the user.
+  #### PUT /files/<filename>
+   This is a PUT operation to add a file to thhe user's personal storage. Storage would be identified by username. Token generated in      Login step is used to validate and identify the user. File content is passed in the request Body.
+  #### GET /files/<filename>
+   This is GET operation. Given the filename in the parameter this operation retrieves the file contents from the storage and send it in    the response Body. Storage would be identified by username. Token generated in Login step is used to validate and identify the          user. 
+  #### GET /files
+   This is a GET operation. it finds all the file names for the corresponding user and sends all the filenames in a JSON message.          Storage would be identified by username. Token generated in Login step is used to validate and identify the user. 
+  #### DELETE /files/<filename>
+   This is a DELETE operation. Given the filename in the parameter this operation deletes the file from the corresponding user's            storage.Storage would be identified by username. Token generated in Login step is used to validate and identify the user.
