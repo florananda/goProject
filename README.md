@@ -39,6 +39,8 @@
  
  ### Channels
   THis folder contains programs related to Concurrency in Golang. It includes the following:
+  #### DistributedSearchEngine.go
+  Uses channels to search from a database using distribued workers
   #### ChannelSumSquaresCubes.go
   uses channel to find sum of squares and cubes of the digits of a number
   #### Workerpool.go
