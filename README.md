@@ -36,3 +36,14 @@
    This is a GET operation. it finds all the file names for the corresponding user and sends all the filenames in a JSON message.          Storage would be identified by username. Token generated in Login step is used to validate and identify the user. 
   #### DELETE /files/<filename>
    This is a DELETE operation. Given the filename in the parameter this operation deletes the file from the corresponding user's            storage.Storage would be identified by username. Token generated in Login step is used to validate and identify the user.
+ 
+ ### Channels
+  THis folder contains programs related to Concurrency in Golang. It includes the following:
+  #### ChannelSumSquaresCubes.go
+  uses channel to find sum of squares and cubes of the digits of a number
+  #### Workerpool.go
+  uses channel to handle in and out values using a pool of workers
+  #### ChannelFanin.go
+  uses multiple channels to fanin to a single channel
+  #### ChannelFanout.go
+  uses single channel to fanout to multiple channel
