@@ -1,0 +1,41 @@
+package main
+
+
+import ("fmt"
+        "strings"
+        )
+
+func Getpermutation(arg string) []string {
+
+    // Write the body of your function here
+    if len(arg)<= 1{ 
+        return []string{arg}
+        
+    }
+    argarray := strings.Split(arg,"")
+    argarrayexlast := argarray[0:len(arg)-1]
+    lastchar := argarray[len(arg)-1]
+    
+    permutationsexceptlast := Getpermutation(strings.Join(argarray[0:len(arg)-1],""))
+
+    permutations := []string{}
+    for _,val :=range permutationsexceptlast{
+        stringarray:=strings.Split(val,"")
+        stringarray=append(stringarray,lastchar)
+        permutations = append(permutations,strings.Join(stringarray,""))
+        for i:=len(argarrayexlast);i>=1;i--{
+            temp:= stringarray[i]
+            stringarray[i] =stringarray[i-1]
+            stringarray[i-1] =temp
+            permutations = append(permutations,strings.Join(stringarray,""))
+        }
+    }
+    return permutations
+}
+
+func main() {
+
+    // Run your function through some test cases here.
+    // Remember: debuggin is half the battle!
+    fmt.Println(Getpermutation("cats"))
+}
